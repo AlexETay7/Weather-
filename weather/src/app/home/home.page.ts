@@ -21,7 +21,12 @@ export class HomePage implements OnInit{
   }
 
   getWeather(cityName: string) {
-    console.log(this.weatherService.getWeatherData(cityName));
+    this.weatherService.getWeatherData(cityName)
+      .subscribe({
+        next: (response) => {
+          console.log(response);
+        }
+      });
   }
 
 }
