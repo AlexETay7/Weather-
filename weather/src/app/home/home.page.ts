@@ -8,8 +8,6 @@ import { WeatherService } from '../services/weather.service';
 })
 export class HomePage implements OnInit{
 
-  cityName: string = "";
-
   constructor(private weatherService: WeatherService) {}
 
 
@@ -22,8 +20,8 @@ export class HomePage implements OnInit{
     })
   }
 
-  getWeather() {
-    console.log(this.weatherService.getWeatherData(this.cityName));
+  getWeather(cityName: string) {
+    console.log(this.weatherService.getWeatherData(cityName));
   }
 
 }

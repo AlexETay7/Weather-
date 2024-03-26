@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
@@ -13,6 +13,12 @@ export class WeatherService {
 
 
   getWeatherData(cityName: string) {
-    return this.http.get('https://api.openweathermap.org/data/2.5/weather?q={cityName}&appid={this.ApiKey}')
+    return this.http.get(environment.weatherApiBaseUrl, {
+      params: new HttpParams()
+      .set('q', cityName)
+      .set('mode', 'json')
+      .set('units', 'metric')
+      .set('appid', '085f41f3da4bb1804408481013545c75')
+    })
   }
 }
