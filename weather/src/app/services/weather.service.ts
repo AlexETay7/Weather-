@@ -7,8 +7,6 @@ import { environment } from 'src/environments/environment';
 })
 export class WeatherService {
 
-  ApiKey = '085f41f3da4bb1804408481013545c75';
-
   constructor(private http: HttpClient) { }
 
 
@@ -18,7 +16,7 @@ export class WeatherService {
       .set('q', cityName)
       .set('mode', 'json')
       .set('units', 'metric')
-      .set('appid', '085f41f3da4bb1804408481013545c75')
+      .set('appid', environment.weatherApiKey)
     })
   }
 }
