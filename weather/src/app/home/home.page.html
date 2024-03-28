@@ -1,14 +1,15 @@
 
 <ion-content>
-  <form (ngSubmit)="onSubmit()">
-    <ion-item>
-      <ion-input type="text" [(ngModel)]="cityName" name="city" placeholder="Search City"></ion-input>
-    </ion-item>
-  </form>
+
   <ion-grid>
+    <ion-row class="ion-justify-content-center" size="4">
+      <form (ngSubmit)="onSubmit()">
+          <ion-input class="ion-padding" shape="round" fill="outline" type="text" [(ngModel)]="cityName" name="city" placeholder="Search City"></ion-input>
+      </form>
+    </ion-row>
     <ion-row class="ion-justify-content-center">
       <ion-col size="4" class="ion-text-center"> 
-        <ion-card>
+        <ion-card color="dark">
           <img alt="sunny" src="../../assets/sunny.png" />
           <ion-card-header>
             <ion-card-title>Card Title</ion-card-title>
