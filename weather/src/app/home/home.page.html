@@ -1,27 +1,28 @@
 
-<ion-content>
+<ion-content *ngIf="weatherData">
 
   <ion-grid>
-    <ion-row class="ion-justify-content-center" size="4">
+    <ion-row class="ion-justify-content-center">
       <form (ngSubmit)="onSubmit()">
           <ion-input class="ion-padding" shape="round" fill="outline" type="text" [(ngModel)]="cityName" name="city" placeholder="Search City"></ion-input>
       </form>
     </ion-row>
     <ion-row class="ion-justify-content-center">
-      <ion-col size="4" class="ion-text-center"> 
-        <ion-card color="dark">
-          <img alt="sunny" src="../../assets/sunny.png" />
-          <ion-card-header>
-            <ion-card-title>Card Title</ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-col size="3" class="ion-text-center"> 
+        <ion-card color="dark">  
+          <ion-item color="dark" lines="none">
+            <ion-icon name="sunny-outline" size="large"></ion-icon>
+            <ion-label class="ion-padding-horizontal">Sunny</ion-label>
+          </ion-item>
+          <ion-card-header class="ion-justify-content-left">
+            <h1>{{weatherData.main.temp}}°F</h1>
+            <h4>{{weatherData.name}}</h4>
           </ion-card-header>
-        
           <ion-card-content>
             <ion-grid>
               <ion-row>
-                <ion-col>COL!</ion-col>
-                <ion-col>COL!</ion-col>
-                <ion-col>COL!</ion-col>
+                <ion-col>Low: {{weatherData.main.temp_min}}°F</ion-col>
+                <ion-col>High: {{weatherData.main.temp_max}}°F</ion-col>
               </ion-row>
             </ion-grid>
           </ion-card-content>
