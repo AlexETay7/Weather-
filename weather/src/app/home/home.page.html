@@ -1,52 +1,38 @@
-<!-- <ion-content [fullscreen]="true">
-  <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-    <ion-card-header>
-      <ion-card-title>Card Title</ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
-    </ion-card-content>
-  </ion-card>
-</ion-content> -->
-
-<!-- <ion-content class="ion-padding" [fullscreen]="true">
-  <ion-card class="ion-text-center">
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-    <ion-card-header>
-      <ion-card-title>Weather Forecast</ion-card-title>
-      <ion-card-subtitle>Today's Forecast</ion-card-subtitle>
-    </ion-card-header>
-  
-    <ion-card-content>
-      Today's weather forecast: Sunny with a chance of clouds. <br>
-      Temperature: 25°C
-    </ion-card-content>
-  </ion-card>
-</ion-content> -->
-<!-- <div class="container">
-  <div class="upper-data">
-    <img src="../../assets/cloudy.png" alt="partly cloudy">
-  </div>
-  <div class="lower-data">
-
-  </div>
-</div> -->
-
-
 
 <ion-content>
-    <ion-card>
-      <ion-card-content>
-        wow
-      </ion-card-content>
-    </ion-card>
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="cityName" name="city" placeholder="Search City"></ion-input>
+    </ion-item>
+  </form>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="4" class="ion-text-center"> 
+        <ion-card>
+          <img alt="sunny" src="../../assets/sunny.png" />
+          <ion-card-header>
+            <ion-card-title>Card Title</ion-card-title>
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col>COL!</ion-col>
+                <ion-col>COL!</ion-col>
+                <ion-col>COL!</ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
 
-<ion-button (click)="getWeather('Boise')">
+
+<!-- <ion-button (click)="getWeather('Boise')">
   Click me
-</ion-button>
+</ion-button> -->
 
 

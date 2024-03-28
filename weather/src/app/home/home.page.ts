@@ -12,18 +12,14 @@ export class HomePage implements OnInit{
   constructor(private weatherService: WeatherService) {}
 
   weatherData?: WeatherData;
+  cityName: string = "Boise";
 
   ngOnInit(): void {
-    this.weatherService.getWeatherData('Boise')
-    .subscribe({
-      next: (response) => {
-        this.weatherData = response;
-        console.log(response);
-      }
-    })
+    this.getWeather(this.cityName);
+    this.cityName = '';
   }
 
-  getWeather(cityName: string) {
+  private getWeather(cityName: string) {
     this.weatherService.getWeatherData(cityName)
       .subscribe({
         next: (response) => {
@@ -31,6 +27,11 @@ export class HomePage implements OnInit{
           console.log(response);
         }
       });
+  }
+
+  onSubmit() {
+    this.getWeather(this.cityName);
+    this.cityName = '';
   }
 
 }

@@ -1,22 +1,4 @@
-:root {
-  --shadow-dark: rgba(0,0,0,0.3);
-  --shadow-light: rgba(255,255,255,0.1);
-}
-
-.container {
-  width: 400px;
-  height: 80vh;
-  background-color: rgb(90, 148, 247);
-  border-radius: 20px;
-  box-shadow: 10px 10px 10px var(--shadow-dark);
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-}
-
-.custom {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
+ion-card {
+  --ion-card-background: white;
 }
 
