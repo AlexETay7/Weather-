@@ -9,11 +9,8 @@
     </ion-row>
     <ion-row class="ion-justify-content-center">
       <ion-col size="3" class="ion-text-center"> 
-        <ion-card color="dark">  
-          <ion-item color="dark" lines="none">
-            <ion-icon name="sunny-outline" size="large"></ion-icon>
-            <ion-label class="ion-padding-horizontal">Sunny</ion-label>
-          </ion-item>
+        <ion-card color="dark">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />  
           <ion-card-header class="ion-justify-content-left">
             <h1>{{weatherData.main.temp}}°F</h1>
             <h4>{{weatherData.name}}</h4>
@@ -31,10 +28,3 @@
     </ion-row>
   </ion-grid>
 </ion-content>
-
-
-<!-- <ion-button (click)="getWeather('Boise')">
-  Click me
-</ion-button> -->
-
-
