@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   weatherApiBaseUrl: 'https://api.openweathermap.org/data/2.5/weather',
+  weatherIconApiUrl: 'https://openweathermap.org/img/wn/10d@2x.png',
   weatherApiKey: '085f41f3da4bb1804408481013545c75'
 };
 

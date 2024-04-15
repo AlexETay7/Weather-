@@ -20,4 +20,11 @@ export class WeatherService {
       .set('appid', environment.weatherApiKey)
     })
   }
+
+  getWeatherIcon(weatherIcon: string) {
+    return this.http.get(environment.weatherIconApiUrl), {
+      params: new HttpParams()
+      
+    }
+  }
 }
