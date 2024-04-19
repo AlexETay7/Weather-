@@ -11,7 +11,6 @@ export class WeatherService {
 
   constructor(private http: HttpClient) { }
 
-
   getWeatherData(cityName: string): Observable<WeatherData> {
     return this.http.get<WeatherData>(environment.weatherApiBaseUrl, {
       params: new HttpParams()
@@ -21,10 +20,8 @@ export class WeatherService {
     })
   }
 
-  getWeatherIcon(weatherIcon: string) {
-    return this.http.get(environment.weatherIconApiUrl), {
-      params: new HttpParams()
-      
-    }
+  makeIconCall(weatherIcon: string) {
+    return this.http.get(environment.weatherIconApiUrl + weatherIcon + "@2x.png");
   }
+
 }

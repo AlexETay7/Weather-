@@ -11,8 +11,8 @@ export class HomePage implements OnInit{
 
   constructor(private weatherService: WeatherService) {}
 
-  weatherData?: WeatherData;
   cityName: string = "Boise";
+  weatherData!: WeatherData; // Removed initialization here
 
   ngOnInit(): void {
     this.getWeather(this.cityName);
@@ -23,10 +23,14 @@ export class HomePage implements OnInit{
     this.weatherService.getWeatherData(cityName)
       .subscribe({
         next: (response) => {
-          this.weatherData = response;
+          this.weatherData = response; // Assign response to weatherData
           console.log(response);
         }
       });
+  }
+
+  private getWeatherIcon(weatherIcon: string) {
+    this.weatherService.makeIconCall(this.weatherData.weather[0].icon);
   }
 
   onSubmit() {
