@@ -20,8 +20,8 @@ export class WeatherService {
     })
   }
 
-  makeIconCall(weatherIcon: string) {
-    return this.http.get(environment.weatherIconApiUrl + weatherIcon + "@2x.png");
-  }
+  // makeIconCall(weatherIcon: string) {
+  //   return this.http.get(environment.weatherIconApiUrl + weatherIcon + "@2x.png");
+  // }
 
 }
