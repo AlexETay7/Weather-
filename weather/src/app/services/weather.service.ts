@@ -24,4 +24,6 @@ export class WeatherService {
   //   return this.http.get(environment.weatherIconApiUrl + weatherIcon + "@2x.png");
   // }
 
+  
+
 }
