@@ -1,5 +1,14 @@
 <ion-content *ngIf="weatherData">
 
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-text>Feels Like: </ion-text>
+        {{weatherData.main.feels_like}}
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
   <ion-grid>
     <ion-row class="ion-justify-content-center">
       <form (ngSubmit)="onSubmit()">

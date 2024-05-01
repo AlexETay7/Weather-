@@ -29,9 +29,9 @@ export class HomePage implements OnInit{
       });
   }
 
-  private getWeatherIcon(weatherIcon: string) {
-    this.weatherService.makeIconCall(this.weatherData.weather[0].icon);
-  }
+  // private getWeatherIcon(weatherIcon: string) {
+  //   this.weatherService.makeIconCall(this.weatherData.weather[0].icon);
+  // }
 
   onSubmit() {
     this.getWeather(this.cityName);
