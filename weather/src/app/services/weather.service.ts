@@ -21,7 +21,7 @@ export class WeatherService {
     })
   }
 
-  getWeatherData(lat: string, long: string): Observable<WeatherData> {
+  getWeatherData(lat: number, long: number): Observable<WeatherData> {
     return this.http.get<WeatherData>(environment.weatherApiBaseUrl, {
       params: new HttpParams()
       .set('lat', lat)

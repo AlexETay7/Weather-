@@ -15,8 +15,8 @@ export class HomePage implements OnInit{
   reqComplete: boolean = false;
 
   cityName: string = "Boise";
-  lat: string = "43.6166163";
-  long: string = "-116.200886";
+  lat: number = 43.6166163;
+  long: number = -116.200886;
   weatherData!: WeatherData; 
   latLong!: LatLong;
 
@@ -26,7 +26,7 @@ export class HomePage implements OnInit{
     this.cityName = '';
   }
 
-  private getWeather(lat: string, long: string) {
+  private getWeather(lat: number, long: number) {
     this.weatherService.getWeatherData(lat, long)
       .subscribe({
         next: (response) => {
@@ -52,7 +52,7 @@ export class HomePage implements OnInit{
 
   makeWeatherCall() {
     this.getLatAndLong(this.cityName);
-    
+    this.getWeather(this.lat, this.long);
   }
 
 }
