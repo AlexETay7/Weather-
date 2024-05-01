@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  weatherApiBaseUrl: 'https://api.openweathermap.org/data/2.5/weather',
+  weatherApiBaseUrl: 'https://api.openweathermap.org/data/2.5/forecast',
+  weatherApiLatLongUrl: 'http://api.openweathermap.org/geo/1.0/direct',
   weatherIconApiUrl: 'https://openweathermap.org/img/wn/',
   weatherApiKey: '085f41f3da4bb1804408481013545c75'
 };

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 import { WeatherData } from '../models/weather.model';
+import { LatLong } from '../models/latlong.model';
 
 @Component({
   selector: 'app-home',
@@ -11,31 +12,47 @@ export class HomePage implements OnInit{
 
   constructor(private weatherService: WeatherService) {}
 
+  reqComplete: boolean = false;
+
   cityName: string = "Boise";
-  weatherData!: WeatherData; // Removed initialization here
+  lat: string = "43.6166163";
+  long: string = "-116.200886";
+  weatherData!: WeatherData; 
+  latLong!: LatLong;
 
   ngOnInit(): void {
-    this.getWeather(this.cityName);
+    this.getLatAndLong(this.cityName);
+    this.getWeather(this.lat, this.long);
     this.cityName = '';
   }
 
-  private getWeather(cityName: string) {
-    this.weatherService.getWeatherData(cityName)
+  private getWeather(lat: string, long: string) {
+    this.weatherService.getWeatherData(lat, long)
       .subscribe({
         next: (response) => {
-          this.weatherData = response; // Assign response to weatherData
+          this.weatherData = response; 
           console.log(response);
+        },
+        complete: () => {
+          // Set reqComplete to true when the request completes
+          this.reqComplete = true;
         }
       });
   }
 
-  // private getWeatherIcon(weatherIcon: string) {
-  //   this.weatherService.makeIconCall(this.weatherData.weather[0].icon);
-  // }
+  private getLatAndLong(cityName: string) {
+    this.weatherService.getCityLatAndLong(cityName)
+      .subscribe({
+        next: (response) => {
+          this.latLong = response;
+          console.log(response);
+        }
+    })
+  }
 
-  onSubmit() {
-    this.getWeather(this.cityName);
-    this.cityName = '';
+  makeWeatherCall() {
+    this.getLatAndLong(this.cityName);
+    
   }
 
 }

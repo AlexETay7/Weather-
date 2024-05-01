@@ -1,38 +1,41 @@
-<ion-content *ngIf="weatherData">
-
-  <ion-card>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="ion-padding" color="dark">
+    <ion-breadcrumbs color="light">
+      <ion-breadcrumb routerLink="/">
+        <ion-icon slot="start" name="home-outline"></ion-icon>
+        Home
+      </ion-breadcrumb>
+      <ion-breadcrumb>
+        <ion-icon slot="start" name="cloud-outline"></ion-icon>
+        Weather.
+      </ion-breadcrumb>
+      <ion-breadcrumb>
+        <ion-searchbar placeholder="Search by City" debounce="1000" color="dark" [(ngModel)]="cityName" (ionInput)="makeWeatherCall()"></ion-searchbar>
+      </ion-breadcrumb>
+    </ion-breadcrumbs>
+  </div>
+  
+  <ion-card color="dark">
     <ion-card-content>
-      <ion-item>
-        <ion-text>Feels Like: </ion-text>
-        {{weatherData.main.feels_like}}
-      </ion-item>
+      <ion-grid>
+        <ion-col>
+          <!-- <ion-row size="3">{{weatherData.city.sunset}}</ion-row>
+          <ion-row>{{weatherData.city}}</ion-row> -->
+        </ion-col>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
-
-  <ion-grid>
-    <ion-row class="ion-justify-content-center">
-      <form (ngSubmit)="onSubmit()">
-          <ion-input class="ion-padding" shape="round" fill="outline" type="text" [(ngModel)]="cityName" name="city" placeholder="Search City"></ion-input>
-      </form>
-    </ion-row>
-    <ion-row class="ion-justify-content-center">
-      <ion-col size="3" class="ion-text-center"> 
-        <ion-card color="secondary">
-          <img alt="Silhouette of mountains" src="https://openweathermap.org/img/wn/10d@2x.png" />  
-          <ion-card-header class="ion-justify-content-left">
-            <h1>{{weatherData.main.temp}}°F</h1>
-            <h4>{{weatherData.name}}</h4>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-grid>
-              <ion-row>
-                <ion-col>Low: {{weatherData.main.temp_min}}°F</ion-col>
-                <ion-col>High: {{weatherData.main.temp_max}}°F</ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
 </ion-content>
+
+
+
+
+
+
+
+  <!-- SKELETON -->
+  <!-- <div *ngIf="!reqComplete">
+    <ion-item *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14]">
+      <ion-skeleton-text [animated]="true" style="width: 100%;"></ion-skeleton-text>
+    </ion-item>
+  </div> -->
