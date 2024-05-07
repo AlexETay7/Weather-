@@ -11,14 +11,20 @@ export class HomePage implements OnInit {
 
   constructor(private weatherService: WeatherService) {}
 
+
+  date: Date = new Date();
   reqComplete: boolean = false;
   cityName: string = "Boise";
   lat: number = 43.6166163;
   lon: number = -116.200886;
   weatherData!: WeatherData; 
+  currentDate: Date = new Date(); 
+  numberOfDaysToShow: number = 5; 
+  datesToShow: Date[] = [];
 
   ngOnInit(): void {
     this.makeWeatherCall();
+    this.generateDates();
     this.cityName = "";
   }
 
@@ -46,6 +52,18 @@ export class HomePage implements OnInit {
           this.reqComplete = true;
         }
       });
+  }
+
+  generateDates() {
+    for (let i = 0; i < this.numberOfDaysToShow; i++) {
+      const nextDay = new Date(this.currentDate);
+      nextDay.setDate(nextDay.getDate() + i);
+      this.datesToShow.push(nextDay);
+    }
+  }
+
+  async showClickedDaysWeather() {
+    console.log("showing weather..");
   }
 
 }

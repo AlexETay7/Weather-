@@ -6,40 +6,28 @@
         Weather.
       </ion-breadcrumb>
       <ion-breadcrumb>
-        <ion-searchbar placeholder="Search by City" debounce="1000" color="dark" [(ngModel)]="cityName" (ionInput)="makeWeatherCall()"></ion-searchbar>
+        <ion-searchbar placeholder="Search by City" debounce="500" color="dark" [(ngModel)]="cityName" (ionInput)="makeWeatherCall()"></ion-searchbar>
       </ion-breadcrumb>
     </ion-breadcrumbs>
   </div>
 
   <ion-grid>
     <ion-row>
-      <ion-col size="12">
-        <ion-card color="dark">
+      <ion-col size="2.4" *ngFor="let date of datesToShow">
+        <ion-card class="ion-padding-horizontal" color="dark" button="true" (click)="showClickedDaysWeather()">
           <ion-card-header>
             <ion-card-title>
-              <h1>{{weatherData.city.name}}</h1>
-              <p>{{weatherData.city.country}}</p>
+              <h2>{{ date | date:'EEEE' }}</h2> <!-- Display day of the week -->
+              <p>{{ date | date:'mediumDate' }}</p> <!-- Display the date -->
             </ion-card-title>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            <ion-card-subtitle>{{weatherData.city.name}}</ion-card-subtitle>
           </ion-card-header>
-          <ion-card-content> Card Content </ion-card-content>
+          <ion-card-content>{{weatherData.city.country}}</ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
+    <ion-row>
+
+    </ion-row>
   </ion-grid>
-  
-  
 </ion-content>
-
-
-
-
-
-
-
-  <!-- SKELETON -->
-  <!-- <div *ngIf="!reqComplete">
-    <ion-item *ngFor="let item of [1,2,3,4,5,6,7,8,9,10,11,12,13,14]">
-      <ion-skeleton-text [animated]="true" style="width: 100%;"></ion-skeleton-text>
-    </ion-item>
-  </div> -->
