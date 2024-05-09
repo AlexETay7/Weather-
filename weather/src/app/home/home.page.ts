@@ -13,7 +13,6 @@ export class HomePage implements OnInit {
 
 
   date: Date = new Date();
-  reqComplete: boolean = false;
   cityName: string = "Boise";
   lat: number = 43.6166163;
   lon: number = -116.200886;
@@ -46,10 +45,6 @@ export class HomePage implements OnInit {
         next: (response) => {
           this.weatherData = response; 
           console.log(response);
-        },
-        complete: () => {
-          // Set reqComplete to true when the request completes
-          this.reqComplete = true;
         }
       });
   }
