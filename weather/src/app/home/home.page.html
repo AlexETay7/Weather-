@@ -72,9 +72,9 @@
           <ion-card-content>
             <p>{{weatherData.list[5].dt_txt | date:'short'}}</p>
             <p>{{weatherData.list[5].main.temp}}</p>
-            <p>{{weatherData.city.sunrise}}</p>
-            <p>{{weatherData.city.sunset}}</p>
-            <p>{{weatherData.city.population}}</p>
+            <p>Sunrise: {{weatherData.city.sunrise}}</p>
+            <p>Sunset: {{weatherData.city.sunset}}</p>
+            <p>Population: {{weatherData.city.population}}</p>
           </ion-card-content>
         </ion-card>
       </ion-col>
