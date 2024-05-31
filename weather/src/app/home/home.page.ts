@@ -35,6 +35,7 @@ export class HomePage implements OnInit {
           this.lon = response.lon;
           console.log(response);
           this.getWeather(this.lat, this.lon);
+          this.cityName = "";
         }
       });
   }
@@ -49,16 +50,12 @@ export class HomePage implements OnInit {
       });
   }
 
-  generateDates() {
+  public generateDates() {
     for (let i = 0; i < this.numberOfDaysToShow; i++) {
       const nextDay = new Date(this.currentDate);
       nextDay.setDate(nextDay.getDate() + i);
       this.datesToShow.push(nextDay);
     }
-  }
-
-  async showClickedDaysWeather() {
-    console.log("showing weather..");
   }
 
 }

@@ -14,7 +14,7 @@
   <ion-grid *ngIf="weatherData">
     <ion-row>
       <ion-col size="2.4" *ngFor="let date of datesToShow">
-        <ion-card class="ion-padding-horizontal" color="dark" button="true" (click)="showClickedDaysWeather()">
+        <ion-card class="ion-padding-horizontal" color="dark" button="true">
           <ion-card-header>
             <ion-card-title>
               <h2>{{ date | date:'EEEE' }}</h2> <!-- Display day of the week -->
