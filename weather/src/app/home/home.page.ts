@@ -26,6 +26,7 @@ export class HomePage implements OnInit {
     this.generateDates();
     this.cityName = "";
   }
+  
 
   public makeWeatherCall() {
     this.weatherService.getCityLatAndLong(this.cityName)
