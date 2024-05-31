@@ -30,7 +30,7 @@
       <ion-col size="2">
         <ion-card color="dark">
           <ion-card-content>
-            <p>{{weatherData.list[0].dt_txt | date:'short'}}</p>
+            <p>{{weatherData.list[0].dt_txt | date:'shortTime'}}</p>
             <p>{{weatherData.list[0].main.temp}}</p>
           </ion-card-content>
         </ion-card>
@@ -38,7 +38,7 @@
       <ion-col size="2">
         <ion-card color="dark">
           <ion-card-content>
-            <p>{{weatherData.list[1].dt_txt | date:'short'}}</p>
+            <p>{{weatherData.list[1].dt_txt | date:'shortTime'}}</p>
             <p>{{weatherData.list[1].main.temp}}</p>
           </ion-card-content>
         </ion-card>
@@ -46,7 +46,7 @@
       <ion-col size="2">
         <ion-card color="dark">
           <ion-card-content>
-            <p>{{weatherData.list[2].dt_txt | date:'short'}}</p>
+            <p>{{weatherData.list[2].dt_txt | date:'shortTime'}}</p>
             <p>{{weatherData.list[2].main.temp}}</p>
           </ion-card-content>
         </ion-card>
@@ -54,7 +54,7 @@
       <ion-col size="2">
         <ion-card color="dark">
           <ion-card-content>
-            <p>{{weatherData.list[3].dt_txt | date:'short'}}</p>
+            <p>{{weatherData.list[3].dt_txt | date:'shortTime'}}</p>
             <p>{{weatherData.list[3].main.temp}}</p>
           </ion-card-content>
         </ion-card>
@@ -62,7 +62,7 @@
       <ion-col size="2">
         <ion-card color="dark">
           <ion-card-content>
-            <p>{{weatherData.list[4].dt_txt | date:'short'}}</p>
+            <p>{{weatherData.list[4].dt_txt | date:'shortTime'}}</p>
             <p>{{weatherData.list[4].main.temp}}</p>
           </ion-card-content>
         </ion-card>
@@ -70,11 +70,8 @@
       <ion-col size="2">
         <ion-card color="dark">
           <ion-card-content>
-            <p>{{weatherData.list[5].dt_txt | date:'short'}}</p>
+            <p>{{weatherData.list[5].dt_txt | date:'shortTime'}}</p>
             <p>{{weatherData.list[5].main.temp}}</p>
-            <p>Sunrise: {{weatherData.city.sunrise}}</p>
-            <p>Sunset: {{weatherData.city.sunset}}</p>
-            <p>Population: {{weatherData.city.population}}</p>
           </ion-card-content>
         </ion-card>
       </ion-col>
