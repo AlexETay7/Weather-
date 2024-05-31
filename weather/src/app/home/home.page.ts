@@ -37,7 +37,6 @@ export class HomePage implements OnInit {
           this.getWeather(this.lat, this.lon);
           this.cityName = "";
         }
-        
       });
   }
 
