@@ -40,6 +40,7 @@ export class HomePage implements OnInit {
       });
   }
   
+  
   private getWeather(lat: number, lon: number) {
     this.weatherService.getWeatherData(lat, lon)
       .subscribe({
