@@ -10,14 +10,14 @@
       </ion-breadcrumb>
     </ion-breadcrumbs>
   </div>
-
+  <ion-title style="font-weight: 600; font-size: 30px;" class="ion-text-center" color="light">5 Day Forecast</ion-title>
   <ion-grid *ngIf="weatherData">
-    <ion-segment class="custom-segment">
+    <!-- <ion-segment class="custom-segment">
       <ion-segment-button>{{weatherData.list[0].dt_txt | date:'shortTime'}}</ion-segment-button>
       <ion-segment-button>{{weatherData.list[1].dt_txt | date:'shortTime'}}</ion-segment-button>
       <ion-segment-button>{{weatherData.list[2].dt_txt | date:'shortTime'}}</ion-segment-button>
       <ion-segment-button>{{weatherData.list[3].dt_txt | date:'shortTime'}}</ion-segment-button>
-    </ion-segment>
+    </ion-segment> -->
     <ion-row>
       <ion-col size="2.4" *ngFor="let date of datesToShow">
         <ion-card class="ion-padding-horizontal" color="dark">
