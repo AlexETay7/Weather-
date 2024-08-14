@@ -59,4 +59,8 @@ export class HomePage implements OnInit {
     }
   }
 
+  openInfoModal() {
+    
+  }
+
 }
