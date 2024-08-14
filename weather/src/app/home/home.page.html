@@ -12,28 +12,22 @@
   </div>
   <ion-title style="font-weight: 600; font-size: 30px;" class="ion-text-center" color="light">3 Hour Forecast in {{weatherData.city.name}}</ion-title>
   <ion-grid *ngIf="weatherData">
-    <!-- <ion-segment class="custom-segment">
-      <ion-segment-button>{{weatherData.list[0].dt_txt | date:'shortTime'}}</ion-segment-button>
-      <ion-segment-button>{{weatherData.list[1].dt_txt | date:'shortTime'}}</ion-segment-button>
-      <ion-segment-button>{{weatherData.list[2].dt_txt | date:'shortTime'}}</ion-segment-button>
-      <ion-segment-button>{{weatherData.list[3].dt_txt | date:'shortTime'}}</ion-segment-button>
-    </ion-segment> -->
     <ion-row>
       <ion-col size="12" sizeXl="2.4" *ngFor="let weather of weatherData.list.slice(0, 5); let i = index">
         <ion-card class="ion-padding-horizontal" color="dark">
           <ion-card-header>
             <ion-card-title class="ion-justify-content-center">
-              <h4 class="ion-text-center">{{ weather.dt_txt | date:'EEEE, MMMM d' }}</h4> <!-- Display day of the week -->
+              <h4 class="ion-text-center">{{ weather.dt_txt | date:'EEEE' }}</h4> <!-- Display day of the week -->
+              <h6 class="ion-text-center">{{ weather.dt_txt | date: 'MMMM d'}}</h6>
             </ion-card-title>
           </ion-card-header>
-          <ion-card-content>
-            <ion-chip color="secondary">{{ weather.dt_txt | date:'mediumDate' }}</ion-chip> <!-- Display the date -->
-            <ion-chip color="tertiary">{{ weather.main.temp }} °F</ion-chip>
-            <ion-chip color="primary">{{ weather.dt_txt | date: 'shortTime' }}</ion-chip>
-            <ion-button fill="clear" (click)="openInfoModal()" color="light">
-              <ion-icon slot="icon-only" name="information-circle-outline"></ion-icon>
-            </ion-button>
+          <ion-card-content class="ion-text-center">
+            <ion-chip color="primary">{{ weather.main.temp }} °F &#64; {{ weather.dt_txt | date: 'shortTime' }}</ion-chip> <!-- Display the date -->
           </ion-card-content>
+          <ion-button expand="block" fill="clear" (click)="openInfoModal()" color="tertiary">
+            Tell me more!
+            <ion-icon slot="end" name="information-circle-outline"></ion-icon>
+          </ion-button>
         </ion-card>
       </ion-col>
     </ion-row>    
